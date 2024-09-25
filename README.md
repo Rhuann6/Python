@@ -1,2 +1,2 @@
 # Python
-Um pouco sobre problemas feito por minha conta própia
+Um pouco de problemas realizados por mim.

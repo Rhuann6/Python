@@ -1,2 +1,2 @@
 # Python
-Um pouco de problemas realizados por mim.
+Um pouco de problemas realizados por mim

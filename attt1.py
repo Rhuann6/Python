@@ -493,9 +493,22 @@ while i<1:
         total+=30
     if piz=='g':
         total+=40
-    igre=str(input('adicionamentos:bacon,tomate,mussarela,cebola e calabresa(valor dos adicionamento:R$ 5,00.digite o nome do igrediente,caso se nao querer digite: nao)'))
-    if igre=='bacon'or'tomate'or'cebola'or'mussarela'or'calabresa':
+    igre=str(input('adicionar tomate?)'))
+    if igre=='sim':
         total+=5
+    igre2=str(input('adicionar bacon ?)'))
+    if igre2=='sim':
+        total+=5
+    igre3=str(input('adicionar calabresa ?)'))
+    if igre3=='sim':
+        total+=5
+    igre4=str(input('adicionar mussarela ?)'))
+    if igre4=='sim':
+        total+=5
+    igre5=str(input('adicionar cebola ?)'))
+    if igre5=='sim':
+        total+=5
+
     beb=str(input('ira querer refrigerante:'))
     if beb=='sim':
         total+=8
@@ -503,16 +516,17 @@ while i<1:
     baixo==total
     alto=total
     if total>alto:
-        alto==total
-    if baixo>total:
-        baixo==total
-    baixo==total
+        alto=total
+    if baixo<total:
+        baixo=total
     deseja=str(input('deseja fazer um novo pedido? '))
-    if deseja=='nao':
+    if deseja=='sim':
+        alto=alto 
+        total=0
+    else:
         i+=2
-    print('o total do pedido foi: ',total)
-print('o pedido mais caro foi: ',alto)
-print('o pedido mais barato foi: ',baixo)
+print('o pedido mais caro foi: ',baixo)
+print('o pedido mais barato foi: ',alto)
 
 
 

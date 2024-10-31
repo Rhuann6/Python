@@ -481,53 +481,72 @@ print("O seu salário total no mês é: R$",salario_total)'''
 #- após isso , pergunta se deseja fazer um novo pedido. - dizer qual foi o pedido mais caro 
 #- -dizer qual o pedido mais baixo 
 #- -quantidade de pedidos
-total=0
-baixo=0
-alto=0
-i=0
-while i<1:
-    piz=str(input('informe M para media,informe P para pequena,informe G para grande :'))
-    if piz=='p':
-        total+=20
-    if piz=='m':
-        total+=30
-    if piz=='g':
-        total+=40
-    igre=str(input('adicionar tomate?)'))
-    if igre=='sim':
-        total+=5
-    igre2=str(input('adicionar bacon ?)'))
-    if igre2=='sim':
-        total+=5
-    igre3=str(input('adicionar calabresa ?)'))
-    if igre3=='sim':
-        total+=5
-    igre4=str(input('adicionar mussarela ?)'))
-    if igre4=='sim':
-        total+=5
-    igre5=str(input('adicionar cebola ?)'))
-    if igre5=='sim':
-        total+=5
+total = 0
+baixo = 0
+alto = 0
+ped = 0
+i = 0
 
-    beb=str(input('ira querer refrigerante:'))
-    if beb=='sim':
-        total+=8
-    print('o total do pedido foi: ',total)
-    baixo==total
-    alto=total
-    if total>alto:
-        alto=total
-    if baixo<total:
-        baixo=total
-    deseja=str(input('deseja fazer um novo pedido? '))
-    if deseja=='sim':
-        alto=alto 
-        total=0
+while i < 1:
+    ped += 1
+    total = 0  # Resetando o total para o novo pedido
+    
+    # Escolha do tamanho da pizza
+    piz = str(input('Informe M para média, P para pequena, ou G para grande: ')).lower()
+    if piz == 'p':
+        total += 20
+    elif piz == 'm':
+        total += 30
+    elif piz == 'g':
+        total += 40
+    
+    # Adicionais
+    igre = str(input('Adicionar tomate? (sim/não): '))
+    if igre == 'sim':
+        total += 5
+
+    igre2 = str(input('Adicionar bacon? (sim/não): '))
+    if igre2 == 'sim':
+        total += 5
+
+    igre3 = str(input('Adicionar calabresa? (sim/não): '))
+    if igre3 == 'sim':
+        total += 5
+
+    igre4 = str(input('Adicionar mussarela? (sim/não): '))
+    if igre4 == 'sim':
+        total += 5
+
+    igre5 = str(input('Adicionar cebola? (sim/não): '))
+    if igre5 == 'sim':
+        total += 5
+    
+    # Bebida
+    beb = str(input('Deseja refrigerante? (sim/não): '))
+    if beb == 'sim':
+        total += 8
+    
+    print('O total do pedido foi: R$', total)
+
+    # Definindo o primeiro pedido como referência para o mais barato e o mais caro
+    if ped == 1:
+        baixo = total
+        alto = total
     else:
-        i+=2
-print('o pedido mais caro foi: ',baixo)
-print('o pedido mais barato foi: ',alto)
+        if total > alto:
+            alto = total
+        if total < baixo:
+            baixo = total
 
+    # Pergunta para continuar ou encerrar pedidos
+    deseja = str(input('Deseja fazer um novo pedido? (sim/não): ')).lower()
+    if deseja != 'sim':
+        i += 1
+
+# Resultado final
+print('O pedido mais caro foi: R$', alto)
+print('O pedido mais barato foi: R$', baixo)
+print('O total de pedidos foi:', ped)
 
 
 

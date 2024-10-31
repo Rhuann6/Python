@@ -1,0 +1,5 @@
+nome=str(input('informe seu nome'))
+print('seu nome é:',nome)
+sobrenome=str (input('informe seu sobrenome'))
+print('seu sobrenome é:',sobrenome)
+print('seu nome e sobrenome e:',nome,sobrenome)
